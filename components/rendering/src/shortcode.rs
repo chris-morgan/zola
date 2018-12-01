@@ -347,7 +347,7 @@ Hello World
         assert_eq!(res, "\nHello World\n{% youtube() %}Some body {{ hello() }}{% end %}");
     }
 
-    // https://github.com/Keats/gutenberg/issues/383
+    // https://github.com/getzola/zola/issues/383
     #[test]
     fn unignore_shortcode_with_body_does_not_swallow_initial_whitespace() {
         let res = render_shortcodes(
@@ -404,7 +404,7 @@ Some body {{ hello() }}{%/* end */%}"#,
         assert_eq!(res, "Body\n Hey!");
     }
 
-    // https://github.com/Keats/gutenberg/issues/462
+    // https://github.com/getzola/zola/issues/462
     #[test]
     fn shortcodes_with_body_do_not_eat_newlines() {
         let mut tera = Tera::default();

@@ -191,7 +191,7 @@ fn can_rebuild_after_renaming_page() {
     assert!(file_contains!(site_path, "public/posts/hard/index.html", "A simple page"));
 }
 
-// https://github.com/Keats/gutenberg/issues/385
+// https://github.com/getzola/zola/issues/385
 #[test]
 fn can_rebuild_after_renaming_colocated_asset_folder() {
     let tmp_dir = tempdir().expect("create temp dir");
@@ -210,7 +210,7 @@ fn can_rebuild_after_renaming_colocated_asset_folder() {
     ));
 }
 
-// https://github.com/Keats/gutenberg/issues/385
+// https://github.com/getzola/zola/issues/385
 #[test]
 fn can_rebuild_after_renaming_section_folder() {
     let tmp_dir = tempdir().expect("create temp dir");

@@ -343,7 +343,7 @@ hello = "world"
         assert_eq!(config.make_permalink("/tags/rust"), "http://127.0.0.1:1111/tags/rust/");
     }
 
-    // https://github.com/Keats/gutenberg/issues/486
+    // https://github.com/getzola/zola/issues/486
     #[test]
     fn doesnt_add_trailing_slash_to_rss() {
         let mut config = Config::default();

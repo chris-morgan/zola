@@ -375,7 +375,7 @@ fn can_insert_anchor_right() {
     );
 }
 
-// See https://github.com/Keats/gutenberg/issues/42
+// See https://github.com/getzola/zola/issues/42
 #[test]
 fn can_insert_anchor_with_exclamation_mark() {
     let permalinks_ctx = HashMap::new();
@@ -388,7 +388,7 @@ fn can_insert_anchor_with_exclamation_mark() {
     );
 }
 
-// See https://github.com/Keats/gutenberg/issues/53
+// See https://github.com/getzola/zola/issues/53
 #[test]
 fn can_insert_anchor_with_link() {
     let permalinks_ctx = HashMap::new();
@@ -499,7 +499,7 @@ fn can_understand_backtick_in_paragraphs() {
     assert_eq!(res.body, "<p>Hello <code>world</code></p>\n");
 }
 
-// https://github.com/Keats/gutenberg/issues/297
+// https://github.com/getzola/zola/issues/297
 #[test]
 fn can_understand_links_in_header() {
     let permalinks_ctx = HashMap::new();
@@ -689,7 +689,7 @@ fn can_handle_summaries() {
     );
 }
 
-// https://github.com/Keats/gutenberg/issues/522
+// https://github.com/getzola/zola/issues/522
 #[test]
 fn doesnt_try_to_highlight_content_from_shortcode() {
     let permalinks_ctx = HashMap::new();

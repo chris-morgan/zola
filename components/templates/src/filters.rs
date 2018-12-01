@@ -67,7 +67,7 @@ mod tests {
         assert_eq!(result.unwrap(), to_value(&"Using <code>map</code>, <code>filter</code>, and <code>fold</code> instead of <code>for</code>").unwrap());
     }
 
-    // https://github.com/Keats/gutenberg/issues/417
+    // https://github.com/getzola/zola/issues/417
     #[test]
     fn markdown_filter_inline_tables() {
         let mut args = HashMap::new();
