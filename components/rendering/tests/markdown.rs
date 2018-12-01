@@ -30,8 +30,8 @@ fn doesnt_highlight_code_block_with_highlighting_off() {
     let mut config = Config::default();
     config.highlight_code = false;
     let context = RenderContext::new(&tera_ctx, &config, "", &permalinks_ctx, InsertAnchor::None);
-    let res = render_content("```\n$ gutenberg server\n```", &context).unwrap();
-    assert_eq!(res.body, "<pre><code>$ gutenberg server\n</code></pre>\n");
+    let res = render_content("```\n$ zola server\n```", &context).unwrap();
+    assert_eq!(res.body, "<pre><code>$ zola server\n</code></pre>\n");
 }
 
 #[test]
@@ -41,10 +41,10 @@ fn can_highlight_code_block_no_lang() {
     let mut config = Config::default();
     config.highlight_code = true;
     let context = RenderContext::new(&tera_ctx, &config, "", &permalinks_ctx, InsertAnchor::None);
-    let res = render_content("```\n$ gutenberg server\n$ ping\n```", &context).unwrap();
+    let res = render_content("```\n$ zola server\n$ ping\n```", &context).unwrap();
     assert_eq!(
         res.body,
-        "<pre style=\"background-color:#2b303b;\">\n<span style=\"color:#c0c5ce;\">$ gutenberg server\n</span><span style=\"color:#c0c5ce;\">$ ping\n</span></pre>"
+        "<pre style=\"background-color:#2b303b;\">\n<span style=\"color:#c0c5ce;\">$ zola server\n</span><span style=\"color:#c0c5ce;\">$ ping\n</span></pre>"
     );
 }
 
