@@ -35,6 +35,13 @@ in the `docs/content` folder of the repository and the community can use [its fo
 			<td align="center">Python</td>
 		</tr>
 		<tr>
+			<th align="left">Supported content formats</th>
+			<td align="left" valign="top">Markdown</td>
+			<td align="left" valign="top">Markdown</td>
+			<td align="left" valign="top">Markdown<br>HTML<br>Org-mode<br>More via helpers</td>
+			<td align="left" valign="top">Markdown<br>HTML<br>reStructuredText<br>More via plugins</td>
+		</tr>
+		<tr>
 			<th align="left">Syntax highlighting</th>
 			<td align="center"><img src="./docs/static/assets/yes.svg" alt="Yes" title="Yes"></td>
 			<td align="center"><img src="./docs/static/assets/yes.svg" alt="Yes" title="Yes"></td>
@@ -183,13 +190,6 @@ in the `docs/content` folder of the repository and the community can use [its fo
 		</tr>
 	</tbody>
 </table>
-
-### Supported content formats
-
-- Zola: markdown
-- Cobalt: markdown
-- Hugo: markdown, asciidoc, org-mode
-- Pelican: reStructuredText, markdown, asciidoc, org-mode, whatever-you-want
 
 ### Template engine explanation
 
