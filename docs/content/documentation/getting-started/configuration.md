@@ -18,10 +18,10 @@ used by Zola config as well as their default values below:
 # Base URL of the site, the only required config argument
 base_url = "mywebsite.com"
 
-# Used in RSS by default
+# Used in feeds by default
 title = ""
 description = ""
-# The default language, used in RSS
+# The default language, used in feeds
 default_language = "en"
 
 # Theme name to use
@@ -34,12 +34,17 @@ highlight_code = false
 # See below for list of accepted values
 highlight_theme = "base16-ocean-dark"
 
-# Whether to generate a RSS feed automatically
-generate_rss = false
+# Whether to generate a feed automatically
+generate_feed = false
 
-# The number of articles to include in the RSS feed. Will include all items if
+# The filename to use for the feed. Used as the template filename, too.
+# Defaults to "atom.xml", which has a builtin template that renders an Atom 1.0 feed.
+# There is also a builtin template "rss.xml" that renders an RSS 2.0 feed.
+# feed_filename = "atom.xml"
+
+# The number of articles to include in the feed. Will include all items if
 # not set (the default).
-# rss_limit = 20
+# feed_limit = 20
 
 # Whether to copy or hardlink files in static/ directory. Useful for sites
 # whose static files are large. Note that for this to work, both static/ and
@@ -50,10 +55,10 @@ generate_rss = false
 # The taxonomies to be rendered for that site and their configuration
 # Example:
 #     taxonomies = [
-#       {name = "tags", rss = true}, # each tag will have its own RSS feed
+#       {name = "tags", feed = true}, # each tag will have its own feed
 #       {name = "tags", lang = "fr"}, # you can have taxonomies with the same name in multiple languages
 #       {name = "categories", paginate_by = 5},  # 5 items per page for a term
-#       {name = "authors"}, # Basic definition: no RSS or pagination
+#       {name = "authors"}, # Basic definition: no feed or pagination
 #     ]
 #
 taxonomies = []
@@ -61,9 +66,9 @@ taxonomies = []
 # The additional languages for that site
 # Example:
 #     languages = [
-#       {code = "fr", rss = true}, # there will be a RSS feed for French content
+#       {code = "fr", feed = true}, # there will be a feed for French content
 #       {code = "fr", search = true}, # there will be a Search Index for French content
-#       {code = "it"}, # there won't be a RSS feed for Italian content
+#       {code = "it"}, # there won't be a feed for Italian content
 #     ]
 #
 languages = []
