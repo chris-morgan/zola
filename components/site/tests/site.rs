@@ -126,12 +126,12 @@ fn can_build_site_without_live_reload() {
 
     // aliases work
     assert!(file_exists!(public, "an-old-url/old-page/index.html"));
-    assert!(file_contains!(public, "an-old-url/old-page/index.html", "something-else"));
+    assert!(file_contains!(public, "an-old-url/old-page/index.html", "something-&-else"));
     assert!(file_contains!(public, "another-old-url/index.html", "posts/"));
 
     // html aliases work
     assert!(file_exists!(public, "an-old-url/an-old-alias.html"));
-    assert!(file_contains!(public, "an-old-url/an-old-alias.html", "something-else"));
+    assert!(file_contains!(public, "an-old-url/an-old-alias.html", "something-&-else"));
 
     // redirect_to works
     assert!(file_exists!(public, "posts/tutorials/devops/index.html"));
@@ -311,7 +311,7 @@ fn can_build_site_and_insert_anchor_links() {
     // anchor link inserted
     assert!(file_contains!(
         public,
-        "posts/something-else/index.html",
+        "posts/something-&-else/index.html",
         "<h1 id=\"title\"><a class=\"zola-anchor\" href=\"#title\""
     ));
 }
@@ -572,7 +572,7 @@ fn can_build_feed() {
 
     assert!(&public.exists());
     assert!(file_exists!(public, "atom.xml"));
-    // latest article is posts/extra-syntax.md
+    // latest article is posts/extra_syntax.md
     assert!(file_contains!(public, "atom.xml", "Extra Syntax"));
     // Next is posts/simple.md
     assert!(file_contains!(public, "atom.xml", "Simple article with shortcodes"));
@@ -595,10 +595,10 @@ fn can_build_with_extra_syntaxes() {
     let (_, _tmp_dir, public) = build_site("test_site");
 
     assert!(&public.exists());
-    assert!(file_exists!(public, "posts/extra-syntax/index.html"));
+    assert!(file_exists!(public, "posts/extra_syntax/index.html"));
     assert!(file_contains!(
         public,
-        "posts/extra-syntax/index.html",
+        "posts/extra_syntax/index.html",
         r#"<span style="color:#d08770;">test</span>"#
     ));
 }

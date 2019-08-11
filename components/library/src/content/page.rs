@@ -4,7 +4,6 @@ use std::path::{Path, PathBuf};
 
 use regex::Regex;
 use slotmap::DefaultKey;
-use slug::slugify;
 use tera::{Context as TeraContext, Tera};
 
 use config::Config;
@@ -160,21 +159,21 @@ impl Page {
 
         page.slug = {
             if let Some(ref slug) = page.meta.slug {
-                slugify(&slug.trim())
+                slug.to_owned()
             } else if page.file.name == "index" {
                 if let Some(parent) = page.file.path.parent() {
                     if let Some(slug) = slug_from_dated_filename {
-                        slugify(&slug)
+                        slug.to_owned()
                     } else {
-                        slugify(parent.file_name().unwrap().to_str().unwrap())
+                        parent.file_name().unwrap().to_str().unwrap().to_owned()
                     }
                 } else {
-                    slugify(&page.file.name)
+                    page.file.name.to_owned()
                 }
             } else if let Some(slug) = slug_from_dated_filename {
-                slugify(&slug)
+                slug.to_owned()
             } else {
-                slugify(&page.file.name)
+                page.file.name.to_owned()
             }
         };
 
@@ -438,7 +437,8 @@ Hello world"#;
     }
 
     #[test]
-    fn can_make_url_from_slug_only_with_no_special_chars() {
+    fn can_make_url_from_slug_only_with_special_chars() {
+        // It's generally a bad idea to do this, but you *can*.
         let content = r#"
     +++
     slug = "hello-&-world"
@@ -448,9 +448,9 @@ Hello world"#;
         let res = Page::parse(Path::new("start.md"), content, &config, &PathBuf::new());
         assert!(res.is_ok());
         let page = res.unwrap();
-        assert_eq!(page.path, "hello-world/");
-        assert_eq!(page.components, vec!["hello-world"]);
-        assert_eq!(page.permalink, config.make_permalink("hello-world"));
+        assert_eq!(page.path, "hello-&-world/");
+        assert_eq!(page.components, vec!["hello-&-world"]);
+        assert_eq!(page.permalink, config.make_permalink("hello-&-world"));
     }
 
     #[test]
@@ -508,13 +508,14 @@ Hello world"#;
     }
 
     #[test]
-    fn can_make_slug_from_non_slug_filename() {
+    fn use_non_slug_filename_as_slug_verbatim() {
+        // It's generally a bad idea to do this, but you *can*.
         let config = Config::default();
         let res =
             Page::parse(Path::new(" file with space.md"), "+++\n+++", &config, &PathBuf::new());
         assert!(res.is_ok());
         let page = res.unwrap();
-        assert_eq!(page.slug, "file-with-space");
+        assert_eq!(page.slug, " file with space");
         assert_eq!(page.permalink, config.make_permalink(&page.slug));
     }
 
@@ -614,9 +615,9 @@ Hello world
         assert_eq!(page.file.parent, path.join("content").join("posts"));
         assert_eq!(page.assets.len(), 3);
         assert_eq!(page.serialized_assets.len(), 3);
-        // We should not get with-assets since that's the slugified version
+        // We should not get with-assets anywhere because we don't slugify paths you provided
         assert!(page.serialized_assets[0].contains("with_assets"));
-        assert_eq!(page.permalink, "http://a-website.com/posts/with-assets/");
+        assert_eq!(page.permalink, "http://a-website.com/posts/with_assets/");
     }
 
     // https://github.com/getzola/zola/issues/607
