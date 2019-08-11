@@ -20,6 +20,6 @@ need to provide a template yourself.
 The feed template gets three variables in addition of the config:
 
 - `feed_url`: the full url to that specific feed
-- `last_build_date`: the date of the latest post
+- `latest_date`: the date of the latest post
 - `pages`: see [the page variables](@/documentation/templates/pages-sections.md#page-variables) for
 a detailed description of what this contains
