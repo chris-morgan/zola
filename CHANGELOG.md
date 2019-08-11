@@ -7,6 +7,13 @@
 accessible everywhere
 - [Slugification](https://en.wikipedia.org/wiki/Slug_(web_publishing)#Slug) of page paths is no longer performed by default.
   To return to the 0.9.0 behaviour, set `slugify_paths = true` in your config.
+- RSS feed support has been altered to allow, *and default to*, Atom feeds, Atom being technically superior and just as widely-supported in normal use cases.
+  - New config value `feed_filename`, defaulting to `atom.xml` (change to `rss.xml` to reinstate the old behaviour)
+  - Config value `rss_limit` is renamed to `feed_limit`
+  - Config value `languages.*.rss` is renamed to `languages.*.feed`
+  - Config value `generate_rss` is renamed to `generate_feed`
+
+  Users with existing feeds should either set `feed_filename = "rss.xml"` in config.toml to keep things the same, or set up a 3xx redirect from rss.xml to atom.xml so that existing feed consumers aren’t broken.
 
 ### Other
 - Add zenburn syntax highlighting theme

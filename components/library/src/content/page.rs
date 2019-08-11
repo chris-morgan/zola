@@ -771,7 +771,7 @@ Hello world
     #[test]
     fn can_specify_language_in_filename() {
         let mut config = Config::default();
-        config.languages.push(Language { code: String::from("fr"), rss: false, search: false });
+        config.languages.push(Language { code: String::from("fr"), feed: false, search: false });
         let content = r#"
 +++
 +++
@@ -788,7 +788,7 @@ Bonjour le monde"#
     #[test]
     fn can_specify_language_in_filename_with_date() {
         let mut config = Config::default();
-        config.languages.push(Language { code: String::from("fr"), rss: false, search: false });
+        config.languages.push(Language { code: String::from("fr"), feed: false, search: false });
         let content = r#"
 +++
 +++
@@ -807,7 +807,7 @@ Bonjour le monde"#
     #[test]
     fn i18n_frontmatter_path_overrides_default_permalink() {
         let mut config = Config::default();
-        config.languages.push(Language { code: String::from("fr"), rss: false, search: false });
+        config.languages.push(Language { code: String::from("fr"), feed: false, search: false });
         let content = r#"
 +++
 path = "bonjour"
