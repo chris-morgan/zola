@@ -11,8 +11,8 @@ to your `config.toml`. For example:
 
 ```toml
 languages = [
-    {code = "fr", rss = true}, # there will be a RSS feed for French content
-    {code = "it"}, # there won't be a RSS feed for Italian content
+    {code = "fr", feed = true}, # there will be a feed for French content
+    {code = "it"}, # there won't be a feed for Italian content
 ]
 ```
 

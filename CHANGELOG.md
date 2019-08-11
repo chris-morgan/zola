@@ -5,6 +5,11 @@
 ### Breaking
 
 - Pages with draft=true are now only loaded/rendered in `zola serve`
+- RSS feed support has been altered to allow, *and default to*, Atom feeds, Atom being technically superior and just as widely-supported in normal use cases.
+  - New config value `feed_filename`, defaulting to `atom.xml` (change to `rss.xml` to reinstate the old behaviour)
+  - Config value `rss_limit` is renamed to `feed_limit`
+  - Config value `languages.*.rss` is renamed to `languages.*.feed`
+  - Config value `generate_rss` is renamed to `generate_feed`
 
 ### Other
 - Add `--open` flag to open server URL in default browser

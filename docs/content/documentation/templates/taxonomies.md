@@ -24,7 +24,7 @@ name: String,
 slug: String,
 paginate_by: Number?;
 paginate_path: String?;
-rss: Bool;
+feed: Bool;
 ```
 
 

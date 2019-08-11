@@ -11,18 +11,18 @@ highlight_code = false
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
-generate_rss = true
+generate_feed = true
 
 taxonomies = [
-    {name = "authors", rss = true},
+    {name = "authors", feed = true},
     {name = "auteurs", lang = "fr"},
     {name = "tags"},
     {name = "tags", lang = "fr"},
 ]
 
 languages = [
- {code = "fr", rss = true},
- {code = "it", rss = false},
+ {code = "fr", feed = true},
+ {code = "it", feed = false},
 ]
 
 [extra]

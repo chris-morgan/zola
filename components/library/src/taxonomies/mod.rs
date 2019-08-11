@@ -360,7 +360,7 @@ mod tests {
     #[test]
     fn can_make_taxonomies_in_multiple_languages() {
         let mut config = Config::default();
-        config.languages.push(Language { rss: false, code: "fr".to_string() });
+        config.languages.push(Language { feed: false, code: "fr".to_string() });
         let mut library = Library::new(2, 0, true);
 
         config.taxonomies = vec![
