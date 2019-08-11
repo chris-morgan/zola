@@ -10,6 +10,7 @@
   - Config value `rss_limit` is renamed to `feed_limit`
   - Config value `languages.*.rss` is renamed to `languages.*.feed`
   - Config value `generate_rss` is renamed to `generate_feed`
+  - Feed template variable `last_build_date` is renamed to `latest_date`
 
 ### Other
 - Add `--open` flag to open server URL in default browser
