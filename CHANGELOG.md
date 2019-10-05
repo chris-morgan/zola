@@ -1,5 +1,9 @@
 # Changelog
 
+## This fork
+### Added
+- Add `author` config option for feeds and HTML to use
+
 ## 0.11.0 (unreleased)
 
 ### Breaking
