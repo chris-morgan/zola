@@ -26,6 +26,7 @@ accessible everywhere
 - Check for path collisions when building the site
 - Add `slugify_anchors` config option to disable slugification of anchors
 - Add `slugify_taxonomy_terms` config option to disable slugification of taxonomy terms
+- Add `author` config option for feeds and HTML to use
 
 ## 0.9.0 (2019-09-28)
 
