@@ -1,4 +1,5 @@
 title = "My site"
+author = { name = "Vincent Prouillet" }
 base_url = "https://replace-this-with-your-url.com"
 highlight_code = true
 compile_sass = true
@@ -12,6 +13,3 @@ taxonomies = [
 extra_syntaxes = ["syntaxes"]
 
 ignored_content = ["*/ignored.md"]
-
-[extra.author]
-name = "Vincent Prouillet"
