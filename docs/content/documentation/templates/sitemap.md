@@ -24,7 +24,7 @@ A `SitemapEntry` has the following fields:
 
 ```ts
 permalink: String;
-date: String?;
+updated: String?;
 extra: Hashmap<String, Any>?;
 ```
 
