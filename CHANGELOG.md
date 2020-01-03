@@ -3,6 +3,7 @@
 ## This fork
 ### Added
 - Add `author` config option for feeds and HTML to use
+- Add a `replace_all` Tera filter to do regular expression replacement
 
 ## 0.11.0 (unreleased)
 
