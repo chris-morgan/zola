@@ -38,6 +38,8 @@ lazy_static! {
         ])
         .unwrap();
         tera.register_filter("replace_all", filters::replace_all);
+        tera.register_filter("bible_refs", filters::bible_refs);
+        tera.register_filter("bible_ref", filters::bible_ref);
         tera.register_filter("markdown", filters::markdown);
         tera.register_filter("base64_encode", filters::base64_encode);
         tera.register_filter("base64_decode", filters::base64_decode);

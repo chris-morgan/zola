@@ -4,6 +4,7 @@
 ### Added
 - Add `author` config option for feeds and HTML to use
 - Add a `replace_all` Tera filter to do regular expression replacement
+- Add `bible_ref` and `bible_refs` Tera filters to make annotated Bible references pretty and linky
 
 ## 0.11.0 (unreleased)
 
